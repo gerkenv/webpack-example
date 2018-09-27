@@ -1,6 +1,6 @@
 # Webpack tutorial
 Easy way to show how `Webpack` can make life simpler.
-Tutorial source:
+Tutorial source: https://www.youtube.com/watch?v=9kJVYpOqcVU
 
 
 
