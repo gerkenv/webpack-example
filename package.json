@@ -1,0 +1,11 @@
+{
+  "name": "webpack-exaple",
+  "version": "1.0.0",
+  "description": "Easy way to show how `Webpack` can make life simpler.\r Tutorial source:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
