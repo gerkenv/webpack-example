@@ -83,3 +83,50 @@ $.fn.jquery
 ```
 ...you will get an exception.
 So right `jquery` exists only where it needs to exist. If you want add a `jquery` to another module - it is fine, code of `jquery` will not be duplicated, it will enclosed in separated hidden module and included in places, where it is required.
+
+### Lodash
+Now let's add the `lodash` to our second module, also we will add an array of objects with people and try to filter all females and get an amount of them. So you can replace code in `module2` as follows:
+```js
+// example module #2
+var _ = require('lodash');
+
+var people = [
+    {
+        "id": 1,
+        "gender": "male",
+        "age": 31
+    },
+    {
+        "id": 2,
+        "gender": "female",
+        "age": 32
+    },
+    {
+        "id": 3,
+        "gender": "male",
+        "age": 33
+    },
+    {
+        "id": 4,
+        "gender": "female",
+        "age": 34
+    },
+    {
+        "id": 5,
+        "gender": "female",
+        "age": 35
+    }
+];
+
+var countFemales = 
+    _.filter(people, {"gender": "female"}).length;
+
+setTimeout(() => {
+    alert("Count of females is " + countFemales);
+}, 5000);
+
+console.log('Module #2 is loaded');
+```
+
+### Conclusion
+So it was a basic example of what `webpack` can do for you, if you want to know everything - go to `webpack` web page and check the examples over there.
