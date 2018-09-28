@@ -56,3 +56,30 @@ To compile the sources to target file we should open console then go to the root
 ```
 webpack
 ```
+Now if we open `index.html` in a browser we will see in development tools console that both our modules were loaded;
+
+### Module Scope
+Each module loaded in our main file will be enclosed in its own scope.
+Let's install `jquery` to our project and `lodash`, also known as `underscore.js`.
+Run from the root of the project:
+```
+npm install -s jquery
+npm install -s lodash
+```
+Now replace code in `module1.js` with this one:
+```js
+// example module #1
+var $ = require('jquery'); 
+
+setTimeout(() => {
+    $('h1').html('New title');
+}, 3000);
+
+console.log('Module #1 is loaded');
+```
+So now if you rebuild a project with the `webpack` and try to check if the `jquery` exists in the global scope of the browser...
+```js
+$.fn.jquery
+```
+...you will get an exception.
+So right `jquery` exists only where it needs to exist. If you want add a `jquery` to another module - it is fine, code of `jquery` will not be duplicated, it will enclosed in separated hidden module and included in places, where it is required.
